@@ -2,9 +2,6 @@ https://trello.com/b/TaGphiWF/wdd-330-team
 
 
 Jared Malan
-<<<<<<< HEAD
 Cristian Fernandez
-=======
 
 Canyon Atwood
->>>>>>> c02982aa838e2771efe688479786c52101454309
