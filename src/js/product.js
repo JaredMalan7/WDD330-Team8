@@ -26,8 +26,12 @@ function getProductsData() {
 
 // add to cart button event handler
 function addToCart(e) {
+  const storedProducts = JSON.parse(localStorage.getItem("so-cart"));
+  let newProducts = [];
   const product = products.find((item) => item.Id === e.target.dataset.id);
-  setLocalStorage("so-cart", product);
+  newProducts = storedProducts;
+  newProducts.push(product);
+  setLocalStorage("so-cart", newProducts);
 }
 
 getProductsData();
