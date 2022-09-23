@@ -27,3 +27,11 @@ export function getParam(param){
   return urlParam.get(param);
 }
 
+export function renderListWithTemplate(template, parentElement, product, callback) {
+  let clone = template.content.cloneNode(true);
+  if (callback) {
+    clone = callback(clone, product);
+  }
+
+  parentElement.appendChild(clone);
+}
