@@ -44,7 +44,3 @@ product.init();
 // getProductsData();
 // // add listener to Add to Cart button
 // document.getElementById("addToCart").addEventListener("click", addToCart);
-<<<<<<< HEAD
-
-=======
->>>>>>> d8dbe7163a11fe75aca467db0f9f37194c41175c
