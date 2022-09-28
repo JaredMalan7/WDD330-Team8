@@ -35,3 +35,41 @@ export function renderListWithTemplate(template, parentElement, product, callbac
 
   parentElement.appendChild(clone);
 }
+
+
+export function renderWithTemplate(template, parentElement, data, callback) {
+  let clone = template.content.cloneNode(true);
+  if (callback) {
+    clone = callback(clone, data);
+  }
+
+  parentElement.appendChild(clone);
+}
+
+export async function loadTemplate(path){
+  const html = await fetch(path).then(converToText);
+  const template = document.createElement('template');
+  template.innerHTML = html;
+  return template;
+}
+
+export function loadHeaderFooter(){
+  debugger
+  header = loadTemplate("../partials/header.html");
+  footer = loadTemplate("../partials/footer.html");
+  headerDOM = document.querySelector("#main-header")
+  footerDOM = document.querySelector("#main-footer")
+  renderWithTemplate(header,headerDOM)
+  renderWithTemplate(footer,footerDOM)
+
+}
+
+
+
+
+
+
+
+
+
+

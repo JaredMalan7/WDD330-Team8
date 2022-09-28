@@ -7,9 +7,9 @@ const dataSource = new ProductData("tents");
 const listElement = document.querySelector(".product-list");
 const pl = new ProductList("tents",dataSource, listElement)
 // debugger
-pl.init()
+pl.init();
 
-
+loadHeaderFooter();
 
 
 
