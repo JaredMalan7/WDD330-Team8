@@ -2,6 +2,7 @@ function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
+    // debugger;
     throw new Error("Bad Response");
   }
 }
@@ -9,15 +10,17 @@ function convertToJson(res) {
 export default class ProductData  {
   constructor(category) {
     this.category = category;
-    // debugger
+    // debugger;
     this.path = `../src/json/${this.category}.json`;
   }
-    getData() {
+  getData() {
+    // debugger;
     return fetch(this.path)
       .then(convertToJson).then((data) => data);
   }
 
   async findProductById(id) {
+    // debugger;
     const products = await this.getData()
     return products.find((item) => item.Id === id);
   }

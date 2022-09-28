@@ -11,10 +11,17 @@ function getCartContents() {
 }
 
 function renderCartItem(item) {
+  img = item.Image;
+  console.log(img.substring(0,9))
+  if (img.substring(0,9) == "../images"){
+    img = "../src" + img.substring(2);
+  };
+
+
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Image}"
+      src="${img}"
       alt="${item.Name}"
     />
   </a>
@@ -25,7 +32,7 @@ function renderCartItem(item) {
   <p class="cart-card__quantity">qty: 1</p>
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
-  console.log(newItem);
+  // console.log(newItem);
   return newItem;
 }
 

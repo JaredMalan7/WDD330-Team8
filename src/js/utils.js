@@ -47,24 +47,46 @@ export function renderWithTemplate(template, parentElement, data, callback) {
 }
 
 export async function loadTemplate(path){
-  const html = await fetch(path).then(converToText);
+  console.log(location.pathname)
+  const html = await fetch(path).then(convertToText);
   const template = document.createElement('template');
   template.innerHTML = html;
   return template;
 }
 
-export function loadHeaderFooter(){
-  debugger
-  header = loadTemplate("../partials/header.html");
-  footer = loadTemplate("../partials/footer.html");
-  headerDOM = document.querySelector("#main-header")
-  footerDOM = document.querySelector("#main-footer")
-  renderWithTemplate(header,headerDOM)
-  renderWithTemplate(footer,footerDOM)
+export async function loadHeaderFooter(){
+  let header = '';
+  let footer = '';
+  // debugger;
+  // header = await loadTemplate("../src/partials/header.html");
+  // debugger;
+  // footer = await loadTemplate("../src/partials/footer.html");
+
+  if(location.pathname.indexOf("src") >= 0) {
+    header = await loadTemplate("../src/partials/header.html");
+    footer = await loadTemplate("../src//partials/footer.html");
+  // } else if(location.pathname.indexOf("build") >= 0) {
+  //   header = await loadTemplate("../build/partials/header.html");
+  //   footer = await loadTemplate("../build/partials/footer.html");
+  }else {
+    header = await loadTemplate("../partials/header.html");
+    footer = await loadTemplate("../partials/footer.html");
+  }
+
+  const headerDOM = document.querySelector("#main-header");
+  const footerDOM = document.querySelector("#main-footer");
+  renderWithTemplate(header,headerDOM);
+  renderWithTemplate(footer,footerDOM);
 
 }
 
-
+function convertToText(res) {
+  if (res.ok) {
+    return res.text();
+  } else {
+    throw new Error("Bad Response");
+  }
+}
 
 
 

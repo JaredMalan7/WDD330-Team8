@@ -6,8 +6,11 @@ export default class ProductDetails {
         this.productId = productId;
         this.product = {};
         this.dataSource = dataSource;
+        this.dataSource.path = `..${this.dataSource.path.substring(6)}`;  // `../json/${this.category}.json`;
+        
 }
     async init(){
+        // debugger;
         this.product = await this.dataSource.findProductById(this.productId);
         document.querySelector('main').innerHTML = this.renderProductDetails();
         // add listener to Add to Cart button
