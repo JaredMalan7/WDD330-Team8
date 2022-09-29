@@ -1,0 +1,1 @@
+import t from"./productData.js";import o from"./productList.js";import{loadHeaderFooter as r}from"./utils.js";const s=["880RR","985RF","985PR","344YJ"],e=new t("tents"),c=document.querySelector(".product-list"),d=new o("tents",e,c,s);d.init(),r();

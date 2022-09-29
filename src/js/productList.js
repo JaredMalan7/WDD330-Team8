@@ -1,15 +1,17 @@
 import { renderListWithTemplate } from "./utils";
 
 export default class ProductList  {
-    constructor(category, datasource, listElement) {
+    constructor(category, datasource, listElement, idList) {
       this.category = category;
       this.datasource = datasource;
       this.listElement = listElement;
+      this.idList = idList;
     }
 
     async init() {
       const list = await this.datasource.getData();
-      this.renderList(list);
+      const filteredList = this.filterList(list, this.idList)
+      this.renderList(filteredList);
     }
 
     renderList(list) {
@@ -32,4 +34,7 @@ export default class ProductList  {
       return template;
     }
 
+    filterList(list, idList) {
+      return list.filter(item => idList.includes(item.Id))
+    }
   }
