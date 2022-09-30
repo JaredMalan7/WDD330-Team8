@@ -1,9 +1,3 @@
-// import ProductData from "./productData.js";
-// import ProductList from "./productList.js";
-
-// const dataSourceProd = new ProductData("tents");
-// const dataSourcePList = new ProductList("tents", "", "");
-
 import ProductData from "./productData.js";
 import ProductList from "./productList.js";
 import { loadHeaderFooter, getParam } from "./utils.js";
