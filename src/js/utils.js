@@ -64,7 +64,7 @@ export async function loadHeaderFooter(){
 
   if(location.pathname.indexOf("src") >= 0) {
     header = await loadTemplate("../src/partials/header.html");
-    footer = await loadTemplate("../src//partials/footer.html");
+    footer = await loadTemplate("../src/partials/footer.html");
   // } else if(location.pathname.indexOf("build") >= 0) {
   //   header = await loadTemplate("../build/partials/header.html");
   //   footer = await loadTemplate("../build/partials/footer.html");
