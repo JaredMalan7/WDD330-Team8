@@ -11,13 +11,16 @@ export default class ProductData  {
   constructor(category) {
     this.category = category;
     // debugger;
-    this.path = `../src/json/${this.category}.json`;
+    this.path = `../json/${this.category}.json`;
   }
   getData() {
-    // debugger;
+    //debugger;
+    //console.log(window.location.pathname);
     return fetch(this.path)
       .then(convertToJson).then((data) => data);
-  }
+
+      
+  }    
 
   async findProductById(id) {
     // debugger;

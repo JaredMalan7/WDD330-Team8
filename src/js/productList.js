@@ -7,10 +7,13 @@ export default class ProductList {
         this.listElement = listElement;
 }
     async init(){
-        // debugger
+        //debugger
+        //console.log(window.location.pathname)
         const list = await this.dataSource.getData();
         
         this.renderList(list);
+        debugger;
+        console.log(list);
     }
     renderList(list) {
         this.listElement.innerHTML = "";
@@ -29,10 +32,10 @@ export default class ProductList {
         // })
       }
     prepareTemplate(template, product){
-        console.log(product.Brand.Name)
+        // console.log(product.Brand.Name)
         template.querySelector("a").href += product.Id;
         // debugger;
-        template.querySelector("img").src = `src/${product.Image}`;
+        template.querySelector("img").src = `../src/${product.Image}`;
         template.querySelector("img").alt += product.Name;
         template.querySelector(".card__brand").textContent = product.Brand.Name;
         template.querySelector(".card__name").textContent = product.NameWithoutBrand;
