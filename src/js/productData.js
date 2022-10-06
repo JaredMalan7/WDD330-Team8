@@ -1,4 +1,4 @@
-const baseURL = "http://157.201.228.93:2992/";
+const baseURL = "http://server-nodejs.cit.byui.edu:3000/";
 function convertToJson(res) {
   if (res.ok) {
     return res.json();
@@ -15,6 +15,7 @@ export default class ProductData {
   }
   getData(category) {
     // instead we will pass the category we want in here when we need it.
+    debugger;
     return fetch(baseURL + `products/search/${category}`)
       .then(convertToJson)
       .then((data) => data.Result);
