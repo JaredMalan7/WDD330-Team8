@@ -1,9 +1,10 @@
-const baseURL = "http://server-nodejs.cit.byui.edu:3000/";
-function convertToJson(res) {
+const baseURL = 'http://server-nodejs.cit.byui.edu:3000/';
+// const baseURL = 'http://127.0.0.1:3000/';
+async function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    throw new Error("Bad Response");
+    throw new Error('Bad Response');
   }
 }
 
@@ -15,7 +16,6 @@ export default class ExternalServices {
   }
   getData(category) {
     // instead we will pass the category we want in here when we need it.
-    //debugger;
     return fetch(baseURL + `products/search/${category}`)
       .then(convertToJson)
       .then((data) => data.Result);
@@ -27,5 +27,15 @@ export default class ExternalServices {
     return await fetch(baseURL + `product/${id}`)
       .then(convertToJson)
       .then((data) => data.Result);
+  }
+  async checkout(payload) {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    };
+    return await fetch(baseURL + 'checkout/', options).then(convertToJson);
   }
 }

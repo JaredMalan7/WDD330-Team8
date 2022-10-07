@@ -238,6 +238,39 @@ button {
   grid-column: 3;
 }
 
+form fieldset{
+  margin: auto;  
+  max-width: 300px;  
+  margin-bottom: 10px;
+}
+form label{
+  font-size: 12px;
+
+}
+form input{
+  height: 30px;
+  min-width: 260px;
+}
+.lbl-left{
+  width: 48%;
+  float: left;
+
+}
+.lbl-left label{ 
+  width: 100%;
+  position:relative;
+  display: inline-block;
+}
+.lbl-right{
+  width: 48%;
+  float: left;
+}
+.lbl-right label{
+  padding-left: 30px;
+  width: 100%;
+  position:relative;
+  display: inline-block;
+}
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

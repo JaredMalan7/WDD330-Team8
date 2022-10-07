@@ -17,35 +17,17 @@
 
 
       <section>
-        <form>
+        <form  name="checkout">
+          <!-- <legend>Checkout Items</legend> -->
           <fieldset class="main-fields">
-            <legend>Checkout Items</legend>
-            <!-- <label class="lbl">Select Nearby Location* -->
-              <!-- <select id="destiantion" class="select-lbl" name="destiantion" required>
-                <option value="">--Select a Temple--</option>
-              </select>  -->
-            <!-- </label> -->
-            <!-- <label class="lbl">First Name<input type="date" name="first" required> </label>
-            <label class="lbl">Last Name<input type="date" name="last" required> </label>
-            <label class="lbl">Room / guest*
-              <select class="select-lbl" name="room" required>
-                <option value="">--Select Room--</option>
-                <option value="1 Room 1 Guess">1 Room 2 Guess</option>
-                <option value="1 Room 2 Guess">1 Room 1 Guess</option>
-                <option value="1 Room 3 Guess">1 Room 3 Guess</option>
-                <option value="1 Room 4+ Guess">1 Room 4+ Guess</option>
-                <option value="2 Room 4 Guess">2 Room 4 Guess</option>
-                <option value="2 Room 4+ Guess">2 Room 4+ Guess</option>
-              </select></label>
-          </fieldset>
-          <fieldset>
-            <legend>Personal Information</legend> -->
+            
+            <legend>Personal Information</legend> 
             <label class="lbl">First Name* <input type="text" name="fname" required> </label>
             <label class="lbl">Last Name* <input type="text" name="lname" required> </label>
             <label class="lbl">Street* <input type="text" name="street" required> </label>
             <label class="lbl">City* <input type="text" name="city" required> </label>
             <label class="lbl">State* <input type="text" name="state" required> </label>
-            <label class="lbl">zip* <input type="text" name="zip" required> </label>
+            <label class="lbl">zip* <input type="text" name="zip"  id="zip" required> </label>
             <label class="lbl">Email* <input type="email" name="email" placeholder="someone@provider.com" required>            </label>
             <label class="lbl">Phone* <input type="tel" name="phone" pattern="[0-9]{,}" placeholder="1235551234" required>
             </label>
@@ -59,19 +41,23 @@
             <label class="lbl">Security Code* <input type="text" name="code" required> </label>
 
           </fieldset>
-          <fieldset>
-            <label class="lbl">Item Subtotal(<span id="item-count">2</span>)</label>
-            <label class="lbl" id="subTotal">$1234.56</label>
+          <fieldset class="checkout-summary">
+            <div class="lbl-left">
+            <label class="lbl">Item Subtotal(<span id="num-items"></span>)</label>
             <label class="lbl">Shipping Estimate</label>
-            <label class="lbl" id="shipCost">10 + 2each</label>
             <label class="lbl">Tax 6%</label>
-            <label class="lbl" id="tax">34.4</label>
             <label class="lbl">Order Total</label>
-            <label class="lbl" id="total">1234.56</label>
-
+          </div>
+          <div class="lbl-right">
+            <label class="lbl" id="cartTotal"></label>
+            <label class="lbl" id="shipping"></label>
+            <label class="lbl" id="tax">34.4</label>
+            <label class="lbl" id="orderTotal"></label>
+          </div>
           </fieldset>
-          <input type="submit" value="Pay Now" class="button">
-  
+          <fieldset>
+          <input id="checkoutSubmit"  type="submit" value="Pay Now" class="button">
+        </fieldset>
         </form>
 
       </section>
