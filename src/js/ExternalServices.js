@@ -7,7 +7,7 @@ function convertToJson(res) {
   }
 }
 
-export default class ProductData {
+export default class ExternalServices {
   constructor() {
     //Using the API means we don't need to tie the dataSource to a specific category anymore. So we can remove this in the constructor.
     // this.category = category;
