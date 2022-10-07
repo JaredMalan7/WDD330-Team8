@@ -34,5 +34,17 @@ export default class CartList {
       list,
       this.prepareTemplate
     );
+    const amounts = list.map((item) => item.FinalPrice);
+    this.total = amounts.reduce((sum, item) => sum + item);
+
+      document.querySelector("#total").innerText += ` $${this.total}`;
   }
-}
+  getTotal(list){
+
+
+
+
+  }
+   
+  }
+

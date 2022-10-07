@@ -15,7 +15,7 @@ export default class ProductData {
   }
   getData(category) {
     // instead we will pass the category we want in here when we need it.
-    debugger;
+    //debugger;
     return fetch(baseURL + `products/search/${category}`)
       .then(convertToJson)
       .then((data) => data.Result);
