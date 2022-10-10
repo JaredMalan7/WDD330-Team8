@@ -1,10 +1,12 @@
 const baseURL = 'http://server-nodejs.cit.byui.edu:3000/';
 // const baseURL = 'http://127.0.0.1:3000/';
 async function convertToJson(res) {
+  
+  jsonResponse = await res.json();
   if (res.ok) {
-    return res.json();
+    return jsonResponse
   } else {
-    throw new Error('Bad Response');
+    throw { name: 'servicesError', message: jsonResponse };
   }
 }
 
