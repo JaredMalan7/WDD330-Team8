@@ -10,8 +10,10 @@ export default class CartList {
 
   async init() {
     const list = getLocalStorage(this.key);
-    this.calculateListTotal(list);
-    this.renderList(list);
+    if(list) {
+      this.calculateListTotal(list);
+      this.renderList(list);
+    }
   }
 
   prepareTemplate(template, product) {
