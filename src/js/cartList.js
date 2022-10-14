@@ -35,4 +35,6 @@ export default class CartList {
       this.prepareTemplate
     );
   }
+
+  
 }
