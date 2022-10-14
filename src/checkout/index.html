@@ -9,9 +9,57 @@
   </head>
   <body>
     <header class="divider" id="main-header"></header>
-    <main class="divider">
+    <main class="divider checkout">
       <section class="products">
         <h2>Review & Place your Order</h2>
+      </section>
+
+
+
+      <section class="checkout-form">
+        <form  name="checkout">
+          <!-- <legend>Checkout Items</legend> -->
+          <fieldset class="main-fields">
+            
+            <legend>Personal Information</legend> 
+            <label class="lbl">First Name* <input type="text" name="fname" required> </label>
+            <label class="lbl">Last Name* <input type="text" name="lname" required> </label>
+            <label class="lbl">Street* <input type="text" name="street" required> </label>
+            <label class="lbl">City* <input type="text" name="city" required> </label>
+            <label class="lbl">State* <input type="text" name="state" required> </label>
+            <label class="lbl">zip* <input type="text" name="zip"  id="zip" required> </label>
+            <label class="lbl">Email* <input type="email" name="email" placeholder="someone@provider.com" required>            </label>
+            <label class="lbl">Phone* <input type="tel" name="phone" pattern="[0-9]{,}" placeholder="1235551234" required>
+            </label>
+            <!-- <label class="lbl">Business name* <input type="text" name="businessname" required> </label> -->
+  
+            <!-- <label><input type="text" name="datetime" id="datetime-loaded" hidden> </label> -->
+          </fieldset>
+          <fieldset>
+            <label class="lbl">Card Number* <input type="text" name="cardNumber" required> </label>
+            <label class="lbl">Expiration* <input type="text" name="expiration" required> </label>
+            <label class="lbl">Security Code* <input type="text" name="code" required> </label>
+
+          </fieldset>
+          <fieldset class="checkout-summary">
+            <div class="lbl-left">
+            <label class="lbl">Item Subtotal(<span id="num-items"></span>)</label>
+            <label class="lbl">Shipping Estimate</label>
+            <label class="lbl">Tax 6%</label>
+            <label class="lbl">Order Total</label>
+          </div>
+          <div class="lbl-right">
+            <label class="lbl" id="cartTotal"></label>
+            <label class="lbl" id="shipping"></label>
+            <label class="lbl" id="tax">34.4</label>
+            <label class="lbl" id="orderTotal"></label>
+          </div>
+          </fieldset>
+          <fieldset>
+          <input id="checkoutSubmit"  type="submit" value="Pay Now" class="button">
+        </fieldset>
+        </form>
+
       </section>
     </main>
     <footer id="main-footer"></footer>

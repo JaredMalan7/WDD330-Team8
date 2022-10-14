@@ -93,6 +93,9 @@ button {
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
+.hide {
+  display: none !important;
+}
 /* End utility classes */
 
 /* Cart icon styles */
@@ -167,6 +170,26 @@ button {
   text-decoration: none;
   color: var(--dark-grey);
 }
+.list-total {
+  text-align: right;
+}
+.list-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5em;
+}
+.list-footer > a {
+  /* display: block; */
+  padding: 0.3em 0.5em;
+  background-color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 5px;
+}
+.list-footer a:link,
+.list-footer a:visited {
+  color: var(--dark-grey);
+}
 /* Styles for product lists */
 .product-card {
   flex: 1 1 45%;
@@ -238,6 +261,39 @@ button {
   grid-column: 3;
 }
 
+form fieldset{
+  margin: auto;  
+  max-width: 300px;  
+  margin-bottom: 10px;
+}
+form label{
+  font-size: 12px;
+
+}
+form input{
+  height: 30px;
+  min-width: 260px;
+}
+.lbl-left{
+  width: 48%;
+  float: left;
+
+}
+.lbl-left label{ 
+  width: 100%;
+  position:relative;
+  display: inline-block;
+}
+.lbl-right{
+  width: 48%;
+  float: left;
+}
+.lbl-right label{
+  padding-left: 30px;
+  width: 100%;
+  position:relative;
+  display: inline-block;
+}
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
@@ -255,4 +311,42 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+/* checkout styles */
+.checkout-form {
+  padding: 0.5em;
+}
+.checkout-form label {
+  display: block;
+}
+.checkout-form input {
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.checkout-summary > ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.checkout-summary li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-summary input {
+  width: 25%;
+  font-size: 1em;
+}
+
+/* alert styles */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: var(--primary-color);
+  border: 1px solid darkorange;
+}
+.alert > p {
+  margin: 0;
 }
