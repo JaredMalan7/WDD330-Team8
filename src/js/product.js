@@ -1,7 +1,7 @@
 import ExternalServices from "./ExternalServices.js";
 import ProductDetails from "./productDetails.js";
 import { getParam } from "./utils.js";
-
+debugger
 const productId = getParam("product");
 const dataSource = new ExternalServices();
 

@@ -3,7 +3,7 @@ import ProductList from "./productList.js";
 import { loadHeaderFooter, getParam } from "./utils.js";
 
 loadHeaderFooter();
-
+debugger;
 const category = getParam("category");
 // first create an instance of our ExternalServices class.
 const dataSource = new ExternalServices();

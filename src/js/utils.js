@@ -6,7 +6,7 @@ function convertToText(res) {
   }
 }
 
-// wrapper for querySelector...returns matching element
+// wrapper for querySelector...returns matching elementgetParam
 export function qs(selector) {
   return document.querySelector(selector);
 }
