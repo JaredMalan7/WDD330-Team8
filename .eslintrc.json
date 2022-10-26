@@ -25,7 +25,11 @@
       }
     ],
     "no-console": 1,
+<<<<<<< HEAD
     "quotes": ["error", "double"],
+=======
+    "quotes": ["error", "single"],
+>>>>>>> ea5d419a1fc42ffa4a65ca9124a9467743a8bb73
     "func-names": 0,
     "space-unary-ops": 2,
     "space-in-parens": "error",
