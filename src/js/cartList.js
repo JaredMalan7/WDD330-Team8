@@ -44,4 +44,6 @@ export default class CartList {
     );
     document.querySelector('#total').innerText += ` $${this.total.toFixed(2)}`;
   }
+
+  
 }
